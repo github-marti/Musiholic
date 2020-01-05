@@ -26,6 +26,20 @@
           </a>
         </div>
       </div>
+      <div class="checkbox-container mt-3">
+        <div
+          v-for="addon in addons"
+          :key="addon.id"
+        >
+            <input
+            type="checkbox"
+            class="checkbox-item"
+            v-model="checked"
+            v-bind:value="addon.name"
+            >
+            <label>{{ addon.name }}</label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -38,14 +52,15 @@ export default {
   data() {
     return {
       selected: {},
-      drinks: ingredients.drinks
+      drinks: ingredients.drinks,
+      addons: ingredients.addons
     };
   },
   methods: {
     select: function(event) {
       document.getElementById("dropdownMenuButton").textContent =
         event.target.textContent;
-      this.selected.drink = event.target.textContent;
+      this.selected.drink = event.target.textContent.replace(/\s/g, '%20');
     }
   }
 };
@@ -68,4 +83,9 @@ export default {
 .dropdown-item {
   font-size: 0.8em;
 }
+
+/* .checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+} */
 </style>

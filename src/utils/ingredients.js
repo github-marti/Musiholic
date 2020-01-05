@@ -13,7 +13,7 @@ export default {
     { name: "Lager", id: 11 },
     { name: "Beer", id: 12 }
   ],
-  ingredients: [
+  addons: [
     { name: "Club Soda", id: 1 },
     { name: "Tonic", id: 2 },
     { name: "Cranberry Juice", id: 3 },
