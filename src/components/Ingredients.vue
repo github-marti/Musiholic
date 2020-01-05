@@ -1,7 +1,7 @@
 <template>
   <div class="ingredients mx-auto">
     <p class="title mb-1 p-2 font-italic">Let me make you something to drink...</p>
-    <div class="card p-2">
+    <div class="card p-3">
       <p class="mb-1">
         <strong>Pick your poison</strong>
       </p>
@@ -15,7 +15,12 @@
           aria-expanded="false"
         >Base Alcohol</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#" v-for="drink in drinks" :key="drink.id">
+          <a 
+            class="dropdown-item" 
+            href="#" 
+            v-for="drink in drinks" 
+            :key="drink.id"
+            v-on:click="select">
               <span>{{drink.name}}</span>
           </a>
         </div>
@@ -44,6 +49,11 @@ export default {
         {name: "Beer", id: 12}
         ]
     };
+  },
+  methods: {
+      select: function (event) {
+          document.getElementById('dropdownMenuButton').textContent = event.target.textContent;
+      }
   }
 };
 </script>
