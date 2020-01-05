@@ -4,10 +4,6 @@
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
       </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
     </header>
     <slot/>
   </div>
@@ -22,29 +18,30 @@ query {
 </static-query>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap');
+
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: 'Helvetica', sans-serif;
   margin:0;
   padding:0;
   line-height: 1.5;
 }
 
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+header {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 2.5em;
+  text-align: center;
+  padding: 20px;
+  background: black;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+header a {
+  text-decoration: none;
+  color: white;
 }
 
-.nav__link {
-  margin-left: 20px;
+header a:hover {
+  color: rgb(170, 255, 237);
+  text-decoration: none;
 }
 </style>

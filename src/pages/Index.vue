@@ -1,27 +1,22 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
+    <div class="mx-auto p-3 about">
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
+      Looking for the perfect cocktail and music combination? Sit back, relax, and open this app! Input your favorite ingredients and pick one of the available drink recipes, and Musi-Holic will recommend a song for you based on your drink of choice.
     </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    </div>
+    <Ingredients />
   </Layout>
 </template>
 
 <script>
+import Ingredients from '../components/Ingredients'
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'musiholic'
+  },
+  components: {
+    Ingredients
   }
 }
 </script>
@@ -29,5 +24,11 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
+}
+
+.about {
+  width: 90%;
+  color: black;
+  text-align: center;
 }
 </style>
