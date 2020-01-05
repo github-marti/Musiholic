@@ -112,7 +112,7 @@ export default {
 }
 
 .alcohol-choice {
-  background: rgb(205, 255, 255);
+  background: rgba(0,0,0,.125);
   top: 0;
   left: 0;
   right: 0;
@@ -132,6 +132,15 @@ export default {
   margin-top: 60px;
   display: flex;
   justify-content: space-evenly;
+}
+
+input[type=checkbox] {
+  border: 1px solid #ccc;
+  background: white;
+}
+
+label {
+  font-family: 'Quicksand', sans-serif;
 }
 
 .search-btn {

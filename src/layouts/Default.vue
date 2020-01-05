@@ -41,7 +41,7 @@ header a {
 }
 
 header a:hover {
-  color: rgb(170, 255, 237);
+  color: rgb(205, 255, 255);
   text-decoration: none;
 }
 </style>
