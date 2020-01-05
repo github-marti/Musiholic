@@ -2,30 +2,28 @@
   <div class="ingredients mx-auto">
     <p class="title mb-1 p-2 font-italic">Let me make you something to drink...</p>
     <div class="card p-3">
-      <div class="mx-auto choose-alochol">
-        <p class="mb-1">
-          <strong>Pick your poison</strong>
-        </p>
-        <div class="dropdown">
-          <button
-            class="btn dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Base Alcohol</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a
-              class="dropdown-item"
-              href="#"
-              v-for="drink in drinks"
-              :key="drink.id"
-              v-on:click="select"
-            >
-              <span>{{drink.name}}</span>
-            </a>
-          </div>
+      <p class="mb-1 mx-auto">
+        <strong>Pick your poison</strong>
+      </p>
+      <div class="dropdown mx-auto">
+        <button
+          class="btn dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >Base Alcohol</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a
+            class="dropdown-item"
+            href="#"
+            v-for="drink in drinks"
+            :key="drink.id"
+            v-on:click="select"
+          >
+            <span>{{drink.name}}</span>
+          </a>
         </div>
       </div>
       <div class="checkbox-container mt-4">
@@ -64,8 +62,8 @@ export default {
   data() {
     return {
       selected: {
-          drink: '',
-          addons: []
+        drink: "",
+        addons: []
       },
       drinks: ingredients.drinks,
       addons: {
@@ -81,12 +79,14 @@ export default {
       this.selected.drink = event.target.textContent.replace(/\s/g, "%20");
     },
     check: function(event) {
-        console.log(event.target.value);
-        if (this.selected.addons.indexOf(event.target.value) === -1) {
-            this.selected.addons.push(event.target.value);
-        } else {
-            this.selected.addons = this.selected.addons.filter(x => x !== event.target.value);
-        };
+      console.log(event.target.value);
+      if (this.selected.addons.indexOf(event.target.value) === -1) {
+        this.selected.addons.push(event.target.value);
+      } else {
+        this.selected.addons = this.selected.addons.filter(
+          x => x !== event.target.value
+        );
+      }
     }
   }
 };
