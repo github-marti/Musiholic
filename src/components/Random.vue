@@ -5,8 +5,9 @@
         <div class="row">
             <div class="col-6 col-sm-4"
                  v-for="genre in genres"
-                 :key="genre.id">
-                <div class="genre-block">{{genre.name}}</div>
+                 :key="genre.id"
+                 >
+                <div class="genre-block quicksand" :style="{ background: genre.background, color: genre.color }">{{genre.name}}</div>
             </div>
         </div>
     </div>
