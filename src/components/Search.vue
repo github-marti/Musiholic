@@ -8,7 +8,9 @@
       <div class="drink-input input-group">
         <input
           type="text"
+          id="drink-search"
           class="form-control"
+          @input="handleInputChange"
           placeholder="Drink name"
           aria-label="Drink-name"
           aria-describedby="basic-addon1"
@@ -21,7 +23,17 @@
 
 <script>
 export default {
-  name: "Search"
+  name: "Search",
+  data() {
+      return {
+          searchTerm: ''
+      }
+  },
+  methods: {
+      handleInputChange: function() {
+          this.searchTerm = document.getElementById("drink-search").value.toLowerCase();
+      }
+  }
 };
 </script>
 

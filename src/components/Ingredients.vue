@@ -82,7 +82,6 @@ export default {
       this.selected.drink = event.target.textContent.replace(/\s/g, "%20");
     },
     check: function(event) {
-      console.log(event.target.value);
       if (this.selected.addons.indexOf(event.target.value) === -1) {
         this.selected.addons.push(event.target.value);
       } else {
