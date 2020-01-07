@@ -40,6 +40,7 @@ export default {
 <style>
 .search {
   width: 85%;
+  margin-bottom: 30px;
 }
 
 .inline {

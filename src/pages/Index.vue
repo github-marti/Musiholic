@@ -7,19 +7,22 @@
     </div>
     <Ingredients />
     <Search />
+    <Random />
   </Layout>
 </template>
 
 <script>
 import Ingredients from '../components/Ingredients'
 import Search from '../components/Search'
+import Random from '../components/Random'
 export default {
   metaInfo: {
     title: 'musiholic'
   },
   components: {
     Ingredients,
-    Search
+    Search,
+    Random
   }
 }
 </script>
