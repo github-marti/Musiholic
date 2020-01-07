@@ -3,23 +3,10 @@
     <p class="title mb-1 p-2 font-bold">Match your musical mood:</p>
     <div class="genre-container">
         <div class="row">
-            <div class="col-6 col-sm-4">
-                <div class="genre-block">Rock</div>
-            </div>
-            <div class="col-6 col-sm-4">
-                <div class="genre-block">Pop</div>
-            </div>
-            <div class="col-6 col-sm-4">
-                <div class="genre-block">Hip Hop</div>
-            </div>
-            <div class="col-6 col-sm-4">
-                <div class="genre-block">Country</div>
-            </div>
-            <div class="col-6 col-sm-4">
-                <div class="genre-block">Dance</div>
-            </div>
-            <div class="col-6 col-sm-4">
-                <div class="genre-block">Indie</div>
+            <div class="col-6 col-sm-4"
+                 v-for="genre in genres"
+                 :key="genre.id">
+                <div class="genre-block">{{genre.name}}</div>
             </div>
         </div>
     </div>
@@ -27,8 +14,14 @@
 </template>
 
 <script>
+import music from '../utils/music'
 export default {
-  name: "Random"
+  name: "Random",
+  data() {
+      return {
+          genres: music.genres
+      }
+  }
 };
 </script>
 
