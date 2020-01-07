@@ -35,12 +35,14 @@ export default {
 <style>
 .random {
   width: 85%;
+  margin-bottom: 30px;
 }
 
 .genre-block {
     text-align: center;
     padding: 30px 10px;
     border: 1px solid #ccc;
+    border-radius: 5px;
     margin: 5px 0;
 }
 </style>
