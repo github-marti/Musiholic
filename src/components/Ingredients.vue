@@ -2,7 +2,7 @@
   <div class="ingredients mx-auto">
     <p class="title mb-1 p-2 font-bold">Leave it to me:</p>
     <div class="card position-relative p-3">
-      <div class="alcohol-choice py-2 position-absolute text-center">
+      <div class="card-title py-2 position-absolute text-center">
         <p class="mb-1 inline">
           <strong>Pick your poison</strong>
         </p>
@@ -96,26 +96,10 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
-
-.title {
-  font-size: 1.4em;
-  font-family: "Quicksand", sans-serif;
-}
 
 .ingredients {
   width: 85%;
-}
-
-.inline {
-  display: inline-block;
-}
-
-.alcohol-choice {
-  background: rgba(0,0,0,.125);
-  top: 0;
-  left: 0;
-  right: 0;
+  margin-bottom: 30px;
 }
 
 .dropdown button {
