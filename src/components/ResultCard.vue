@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="result-card card mx-auto my-3 p-3 text-center" v-for="result in results" :key="result.idDrink">
-      <h3>{{ result.strDrink }}</h3>
-      <img class="result-img mx-auto" :src="result.strDrinkThumb">
+    <div class="result-card card mx-auto my-3 p-3 text-center" v-for="index in 5" :key="results[index].idDrink">
+      <h3>{{ results[index].strDrink }}</h3>
+      <img class="result-img mx-auto" :src="results[index].strDrinkThumb">
     </div>
   </div>
 </template>
