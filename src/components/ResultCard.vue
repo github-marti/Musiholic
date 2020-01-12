@@ -25,6 +25,9 @@
         <h3>{{ results[index].strDrink }}</h3>
         <img class="result-img mx-auto" :src="results[index].strDrinkThumb" />
       </div>
+      <div class="text-center">
+        <button type="button" class="mx-auto mb-4 btn btn-secondary search-btn">Show More</button>
+    </div>
     </template>
   </div>
 </template>
