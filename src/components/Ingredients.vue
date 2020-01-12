@@ -52,13 +52,14 @@
           </div>
         </div>
       </div>
-      <button type="button" class="mx-auto mt-3 btn btn-secondary search-btn">Search</button>
+      <button type="button" class="mx-auto mt-3 btn btn-secondary search-btn" @click="submit">Search</button>
     </div>
   </div>
 </template>
 
 <script>
 import ingredients from "../utils/ingredients";
+import axios from 'axios';
 
 export default {
   name: "Ingredients",
@@ -79,16 +80,23 @@ export default {
     select: function(event) {
       document.getElementById("dropdownMenuButton").textContent =
         event.target.textContent;
-      this.selected.drink = event.target.textContent.replace(/\s/g, "%20");
+      this.selected.drink = event.target.textContent.replace(/\s/g, "_");
     },
     check: function(event) {
-      if (this.selected.addons.indexOf(event.target.value) === -1) {
-        this.selected.addons.push(event.target.value);
+      if (this.selected.addons.indexOf(event.target.value.replace(/\s/g, "_")) === -1) {
+        this.selected.addons.push(event.target.value.replace(/\s/g, "_"));
       } else {
         this.selected.addons = this.selected.addons.filter(
-          x => x !== event.target.value
+          x => x !== event.target.value.replace(/\s/g, "_")
         );
-      }
+      };
+    },
+    submit: async function() {
+      let ingredients = [this.selected.drink, ...this.selected.addons].join();
+      let queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${ingredients}`;
+      const results = await axios.get(queryURL);
+      console.log(ingredients);
+      console.log(results);
     }
   }
 };
