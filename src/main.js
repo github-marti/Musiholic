@@ -3,8 +3,11 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+Vue.use(VueRouter)
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

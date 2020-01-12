@@ -89,11 +89,12 @@ export default {
       };
     },
     submit: async function() {
-      let ingredients = [this.selected.drink, ...this.selected.addons].join();
+      let ingredients = [globalState.selected.drink, ...globalState.selected.addons].join();
       let queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${ingredients}`;
       const results = await axios.get(queryURL);
-      console.log(ingredients);
-      console.log(results);
+      globalState.results = results.data.drinks;
+      console.log(globalState.results);
+      this.$router.push('search');
     }
   }
 };

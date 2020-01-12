@@ -1,11 +1,20 @@
 <template>
-    <h3>I am a drink</h3>
+  <div>
+    <div v-for="result in results">
+      <h3>I am a drink</h3>
+    </div>
+  </div>
 </template>
 
 <script>
-import { globalState } from '../main.js'
+import { globalState } from "../main.js";
 
 export default {
-    name: "ResultCard",
-}
+  name: "ResultCard",
+  data() {
+      return {
+          results: globalState.results
+      }
+  }
+};
 </script>
