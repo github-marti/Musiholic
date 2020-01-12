@@ -73,6 +73,12 @@ export default {
       }
     };
   },
+  created() {
+      globalState.selected = {
+        drink: '',
+        addons: []
+      };
+  },
   methods: {
     select: function(event) {
       document.getElementById("dropdownMenuButton").textContent =
