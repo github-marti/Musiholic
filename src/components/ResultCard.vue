@@ -1,7 +1,17 @@
 <template>
   <div>
-    <template v-if="results === 'None Found' || results.length < 5">
-      <h3>Less than 5</h3>
+    <template v-if="results === 'None Found'">
+      <h3>We couldn't find any drinks.</h3>
+    </template>
+    <template v-else-if="results.length < 5">
+        <div
+        class="result-card card mx-auto my-3 p-3 text-center"
+        v-for="result in results"
+        :key="result.idDrink"
+      >
+        <h3>{{ result.strDrink }}</h3>
+        <img class="result-img mx-auto" :src="result.strDrinkThumb" />
+      </div>
     </template>
     <template v-else>
       <div
