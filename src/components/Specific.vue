@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "Search",
+  name: "Specific",
   data() {
       return {
           searchTerm: ''

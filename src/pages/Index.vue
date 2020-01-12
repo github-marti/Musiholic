@@ -2,7 +2,7 @@
   <Layout>
     <About />
     <Ingredients />
-    <Search />
+    <Specific />
     <Random />
   </Layout>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import About from '../components/About'
 import Ingredients from '../components/Ingredients'
-import Search from '../components/Search'
+import Specific from '../components/Specific'
 import Random from '../components/Random'
 export default {
   metaInfo: {
