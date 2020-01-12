@@ -30,6 +30,7 @@
       <div class="text-center">
         <button
           type="button"
+          id="showmore-button"
           class="mx-auto mb-4 btn btn-secondary search-btn"
           @click="showMore"
         >Show More</button>
@@ -58,6 +59,7 @@ export default {
         this.numOfResults += 5;
       } else {
         this.numOfResults += (this.results.length - this.numOfResults);
+        document.getElementById('showmore-button').disabled = true;
       }
     }
   }
