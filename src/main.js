@@ -4,7 +4,6 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import routes from './routes'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
