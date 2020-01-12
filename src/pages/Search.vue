@@ -1,17 +1,18 @@
 <template>
   <Layout>
-    <About />
+    <ResultCard />
   </Layout>
 </template>
 
 <script>
-import About from '../components/About'
+import ResultCard from '../components/ResultCard'
+
 export default {
   metaInfo: {
     title: 'musiholic'
   },
   components: {
-    About
+    ResultCard
   }
 }
 </script>
