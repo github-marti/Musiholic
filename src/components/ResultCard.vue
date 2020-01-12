@@ -1,10 +1,13 @@
 <template>
   <div>
     <template v-if="results === 'None Found'">
-      <h3>We couldn't find any drinks.</h3>
+      <div class="result-card card mx-auto my-3 p-3 text-center">
+        <h3>We couldn't find any drinks.</h3>
+        <g-link to="/"><h4>Try again?</h4></g-link>
+      </div>
     </template>
     <template v-else-if="results.length < 5">
-        <div
+      <div
         class="result-card card mx-auto my-3 p-3 text-center"
         v-for="result in results"
         :key="result.idDrink"
@@ -37,7 +40,7 @@ export default {
     };
   },
   created() {
-      console.log(globalState.results);
+    console.log(globalState.results);
   }
 };
 </script>
