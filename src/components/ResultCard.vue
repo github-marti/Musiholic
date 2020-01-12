@@ -3,10 +3,12 @@
     <template v-if="results === 'None Found'">
       <div class="result-card card mx-auto my-3 p-3 text-center">
         <h3>We couldn't find any drinks.</h3>
-        <g-link to="/"><h4>Try again?</h4></g-link>
+        <g-link to="/">
+          <h4>Try again?</h4>
+        </g-link>
       </div>
     </template>
-    <template v-else-if="results.length < 5">
+    <template v-else-if="results.length <= 5">
       <div
         class="result-card card mx-auto my-3 p-3 text-center"
         v-for="result in results"
@@ -19,15 +21,19 @@
     <template v-else>
       <div
         class="result-card card mx-auto my-3 p-3 text-center"
-        v-for="index in 5"
-        :key="results[index].idDrink"
+        v-for="index in numOfResults"
+        :key="results[index-1].idDrink"
       >
-        <h3>{{ results[index].strDrink }}</h3>
-        <img class="result-img mx-auto" :src="results[index].strDrinkThumb" />
+        <h3>{{ results[index-1].strDrink }}</h3>
+        <img class="result-img mx-auto" :src="results[index-1].strDrinkThumb" />
       </div>
       <div class="text-center">
-        <button type="button" class="mx-auto mb-4 btn btn-secondary search-btn">Show More</button>
-    </div>
+        <button
+          type="button"
+          class="mx-auto mb-4 btn btn-secondary search-btn"
+          @click="showMore"
+        >Show More</button>
+      </div>
     </template>
   </div>
 </template>
@@ -39,11 +45,21 @@ export default {
   name: "ResultCard",
   data() {
     return {
-      results: globalState.results
+      results: globalState.results,
+      numOfResults: 5
     };
   },
   created() {
     console.log(globalState.results);
+  },
+  methods: {
+    showMore: function() {
+      if (this.numOfResults + 5 < this.results.length) {
+        this.numOfResults += 5;
+      } else {
+        this.numOfResults += (this.results.length - this.numOfResults);
+      }
+    }
   }
 };
 </script>
