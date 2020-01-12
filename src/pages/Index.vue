@@ -1,9 +1,11 @@
 <template>
   <Layout>
-    <About />
-    <Ingredients />
-    <Specific />
-    <Random />
+    <template v-if="display === 'main'">
+      <About />
+      <Ingredients />
+      <Specific />
+      <Random />
+    </template>
   </Layout>
 </template>
 
@@ -19,8 +21,13 @@ export default {
   components: {
     About,
     Ingredients,
-    Search,
+    Specific,
     Random
+  },
+  data() {
+    return {
+      display: 'main'
+    }
   }
 }
 </script>

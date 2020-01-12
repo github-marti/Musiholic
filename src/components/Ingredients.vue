@@ -60,15 +60,12 @@
 <script>
 import ingredients from "../utils/ingredients";
 import axios from 'axios';
+import { globalState } from '../main.js';
 
 export default {
   name: "Ingredients",
   data() {
     return {
-      selected: {
-        drink: "",
-        addons: []
-      },
       drinks: ingredients.drinks,
       addons: {
         group1: ingredients.addons.group1,
@@ -80,13 +77,13 @@ export default {
     select: function(event) {
       document.getElementById("dropdownMenuButton").textContent =
         event.target.textContent;
-      this.selected.drink = event.target.textContent.replace(/\s/g, "_");
+      globalState.selected.drink = event.target.textContent.replace(/\s/g, "_");
     },
     check: function(event) {
-      if (this.selected.addons.indexOf(event.target.value.replace(/\s/g, "_")) === -1) {
-        this.selected.addons.push(event.target.value.replace(/\s/g, "_"));
+      if (globalState.selected.addons.indexOf(event.target.value.replace(/\s/g, "_")) === -1) {
+        globalState.selected.addons.push(event.target.value.replace(/\s/g, "_"));
       } else {
-        this.selected.addons = this.selected.addons.filter(
+        globalState.selected.addons = globalState.selected.addons.filter(
           x => x !== event.target.value.replace(/\s/g, "_")
         );
       };
