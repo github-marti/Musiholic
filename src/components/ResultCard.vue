@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div v-for="result in results">
-      <h3>I am a drink</h3>
+    <div class="result-card card mx-auto my-3 p-3" v-for="result in results">
+      <h3>{{ result.strDrink }}</h3>
+      <img :src="result.strDrinkThumb">
     </div>
   </div>
 </template>
@@ -18,3 +19,9 @@ export default {
   }
 };
 </script>
+
+<style>
+    .result-card {
+        width: 70%;
+    }
+</style>
