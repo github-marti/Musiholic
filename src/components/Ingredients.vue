@@ -3,7 +3,7 @@
     <p class="title mb-1 p-1 mb-3 font-bold quicksand">Leave it to me:</p>
     <div class="card position-relative p-3 font-black">
       <div class="card-title py-2 position-absolute text-center">
-        <p class="mb-1 inline">
+        <p class="mb-1 inline font-black">
           <strong>Pick your poison</strong>
         </p>
         <div class="dropdown ml-3 inline">
