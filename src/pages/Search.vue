@@ -6,7 +6,7 @@
         <h4>Try again?</h4>
       </g-link>
     </div>
-    <template v-else>
+    <template>
       <ResultCard
         v-for="index in numOfResults"
         :drink-name="results[index-1].strDrink"
@@ -41,12 +41,14 @@ export default {
   data() {
     return {
       results: globalState.results,
-      numOfResults: 5
+      numOfResults: globalState.results.length < 5 ? globalState.results.length : 5
     };
+  },
+  created() {
+    console.log(globalState.results);
   },
   methods: {
     showMore: function() {
-      console.log('click')
       if (this.numOfResults + 5 < this.results.length) {
         this.numOfResults += 5;
       } else {
@@ -60,7 +62,6 @@ export default {
       )}`;
       const result = await axios.get(queryURL);
       globalState.selectedDrink = result.data.drinks[0];
-      console.log(globalState.selectedDrink);
       this.$router.push("results");
     }
   }
