@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <header class="header">
+    <header class="header position-relative">
       <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+        <g-link class="position-absolute main-title" to="/">MUSIHOLIC</g-link>
       </strong>
     </header>
     <slot/>
@@ -18,7 +18,7 @@ query {
 </static-query>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prompt:900&display=swap');
 
 body {
   font-family: 'Helvetica', sans-serif;
@@ -28,16 +28,18 @@ body {
 }
 
 header {
-  font-family: 'Montserrat Subrayada', sans-serif;
-  font-size: 2.5em;
+  font-family: 'Prompt', sans-serif;
   text-align: center;
-  padding: 20px;
-  background: black;
+  height: 150px;
+  background: #4dd5be;
 }
 
-header a {
+.main-title {
   text-decoration: none;
+  font-size: 5em;
   color: white;
+  left: 0;
+  bottom: 0;
 }
 
 header a:hover {

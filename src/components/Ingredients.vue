@@ -1,7 +1,7 @@
 <template>
   <div class="ingredients mx-auto">
     <p class="title mb-1 p-2 font-bold">Leave it to me:</p>
-    <div class="card position-relative p-3">
+    <div class="card position-relative p-3 font-black">
       <div class="card-title py-2 position-absolute text-center">
         <p class="mb-1 inline">
           <strong>Pick your poison</strong>

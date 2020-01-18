@@ -35,16 +35,25 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
+body {
+  background: black;
+  color: white;
+}
+
 .quicksand {
   font-family: 'Quicksand', sans-serif;
 }
+
+.font-black {
+  color: black;
+}
+
 .home-links a {
   margin-right: 1rem;
 }
 
 .about {
   width: 90%;
-  color: black;
   text-align: center;
 }
 
