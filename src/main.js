@@ -6,8 +6,19 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCompactDisc, faMusic, faWineGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 Vue.use(VueRouter)
+
+library.add(
+  faCompactDisc,
+  faMusic,
+  faWineGlass
+)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

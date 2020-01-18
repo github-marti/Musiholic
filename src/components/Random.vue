@@ -1,6 +1,6 @@
 <template>
   <div class="random mx-auto">
-    <p class="title mb-1 p-2 font-bold">Match your musical mood:</p>
+    <p class="title mb-1 p-1 mb-3 font-bold quicksand">Match your musical mood:</p>
     <div class="genre-container">
         <div class="row">
             <div class="col-6 col-sm-4"
@@ -28,7 +28,7 @@ export default {
 
 <style>
 .random {
-  width: 85%;
+  width: 90%;
   margin-bottom: 30px;
 }
 

@@ -44,6 +44,10 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+.prompt {
+  font-family: 'Prompt', sans-serif;
+}
+
 .font-black {
   color: black;
 }
@@ -58,12 +62,17 @@ body {
 }
 
 .title {
-  font-size: 1.4em;
-  font-family: "Quicksand", sans-serif;
+  font-size: 1.8em;
+  color: #4dd5be;
+}
+
+.card {
+  border-style: none;
+  border-radius: 0;
 }
 
 .card-title {
-  background: rgba(0,0,0,.125);
+  background: #4dd5be;
   top: 0;
   left: 0;
   right: 0;

@@ -1,6 +1,6 @@
 <template>
   <div class="search mx-auto">
-    <p class="title mb-1 p-2 font-bold">Looking for something in particular?</p>
+    <p class="title mb-1 p-1 mb-3 font-bold quicksand">Looking for something in particular?</p>
     <div class="card position-relative p-3 font-black">
       <div class="card-title py-2 position-absolute text-center">
         <strong>Enter your drink here:</strong>
@@ -55,7 +55,7 @@ export default {
 
 <style>
 .search {
-  width: 85%;
+  width: 90%;
   margin-bottom: 30px;
 }
 

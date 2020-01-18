@@ -1,8 +1,19 @@
 <template>
   <div class="layout">
-    <header class="header position-relative">
+    <header class="header">
       <strong>
-        <g-link class="position-absolute main-title" to="/">MUSIHOLIC</g-link>
+        <g-link class="main-title" to="/">
+          <span>M</span>
+          <span><font-awesome-icon icon="music" flip="vertical" size=".5rem"/></span>
+          <span>S</span>
+          <span>I</span>
+          <span>H</span>
+          <span><font-awesome-icon icon="compact-disc"/></span>
+          <span>L</span>
+          <span><font-awesome-icon icon="wine-glass"/></span>
+          <span>C</span>
+
+        </g-link>
       </strong>
     </header>
     <slot/>
@@ -18,7 +29,7 @@ query {
 </static-query>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Prompt:900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prompt:700,900&display=swap');
 
 body {
   font-family: 'Helvetica', sans-serif;
@@ -30,20 +41,18 @@ body {
 header {
   font-family: 'Prompt', sans-serif;
   text-align: center;
-  height: 150px;
   background: #4dd5be;
 }
 
 .main-title {
   text-decoration: none;
-  font-size: 5em;
-  color: white;
-  left: 0;
-  bottom: 0;
+  font-size: 5.5em;
+  color: black;
+  bottom: -22%;
 }
 
 header a:hover {
-  color: rgb(205, 255, 255);
+  color: white;
   text-decoration: none;
 }
 </style>
