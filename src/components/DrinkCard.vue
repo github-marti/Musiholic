@@ -3,22 +3,26 @@
     <h3>{{ drink.strDrink }}</h3>
     <img class="drink-img my-3 mx-auto" :src="drink.strDrinkThumb" />
     <IngredientsCard :ingredients="ingredients" />
+    <InstructionsCard :instructions="instructions" />
   </div>
 </template>
 
 <script>
 import { globalState } from "../main";
 import IngredientsCard from "./IngredientsCard";
+import InstructionsCard from "./InstructionsCard";
 
 export default {
   name: "DrinkCard",
   data() {
     return {
       drink: globalState.selectedDrink,
-      ingredients: []
+      ingredients: [],
+      instructions: globalState.selectedDrink.strInstructions
     };
   },
   created() {
+    console.log(this.drink);
     let i = 1;
     while (this.drink[`strIngredient${i}`]) {
       this.ingredients.push({
@@ -31,7 +35,8 @@ export default {
     return this.ingredients;
   },
   components: {
-    IngredientsCard
+    IngredientsCard,
+    InstructionsCard
   }
 };
 </script>
