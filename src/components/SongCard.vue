@@ -1,12 +1,14 @@
 <template>
-  <div class="song-card mx-auto my-3 text-center d-flex flex-row">
-    <div class="artist-img">
+  <div class="song-card mx-auto my-3 d-flex flex-row flex-wrap">
+    <div class="artist-img flex-shrink-1">
       <img :src="artistImg" />
     </div>
-    <div class="song-info p-3 mx-auto">
+    <div class="song-info flex-fill p-3 mx-auto text-center">
       <p class="quicksand song-title mb-0">{{ songTitle }}</p>
       <p class="quicksand artist-name">by {{ artistName }}</p>
-      <audio ref="player" controls><source :src="preview"></audio>
+      <audio ref="player" class="song-preview" controls>
+        <source :src="preview" />
+      </audio>
     </div>
   </div>
 </template>
@@ -40,10 +42,10 @@ export default {
     );
     this.selectAlcohol();
   },
-  mounted: function () {
-  	this.$watch('preview', function () {
-    	this.$refs.player.load()
-    })
+  mounted: function() {
+    this.$watch("preview", function() {
+      this.$refs.player.load();
+    });
   },
   methods: {
     selectAlcohol: function() {
@@ -116,14 +118,38 @@ export default {
   color: black;
 }
 
-.artist-img>img {
-    min-height: 200px;
-    max-width: 200px;
+.artist-img > img {
+  max-width: 100%;
+  min-width: 150px;
   margin: 0;
   object-fit: contain;
+  overflow: hidden;
 }
 
 .song-title {
-    font-size: 3vw;
+  font-size: 4vw;
+}
+
+.song-preview {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .song-card {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    flex-direction: column !important;
+  }
+
+  .artist-img {
+      margin: auto;
+  }
+
+  .artist-img > img {
+      margin-top: 15px;
+      max-height: 200px;
+      border-radius: 50%;
+      border: 6px solid black;
+  }
 }
 </style>
