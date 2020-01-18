@@ -45,7 +45,7 @@ export default {
     handleSubmit: async function() {
       let queryURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.searchTerm}`;
       const results = await axios.get(queryURL);
-      globalState.results = results.data.drinks;
+      globalState.results = results.data.drinks[0];
       console.log(results.data);
       this.$router.push("search");
     }

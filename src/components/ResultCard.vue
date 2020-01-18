@@ -77,8 +77,8 @@ export default {
     selectDrink: async function(event) {
       let queryURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${event.target.getAttribute('data-value')}`;
       const result = await axios.get(queryURL);
-      globalState.result = result.data.drinks;
-      console.log(result);
+      globalState.selectedDrink = result.data.drinks[0];
+      console.log(globalState.selectedDrink);
       this.$router.push("results");
     }
   }
