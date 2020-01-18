@@ -1,18 +1,19 @@
 <template>
-    <Layout>
-        <DrinkCard />
-    </Layout>
+  <Layout>
+    <DrinkCard />
+  </Layout>
 </template>
 
 <script>
-import DrinkCard from '../components/DrinkCard'
+import DrinkCard from "../components/DrinkCard";
+import { globalState } from "../main";
 
 export default {
-    metaInfo: {
-        title: "musiholic"
-    },
-    components: {
-        DrinkCard
-    }
-}
+  metaInfo: {
+    title: "musiholic"
+  },
+  components: {
+    DrinkCard
+  }
+};
 </script>
