@@ -41,7 +41,6 @@ export default {
       this.searchTerm = document
         .getElementById("drink-search")
         .value.toLowerCase();
-      console.log(this.searchTerm);
     },
     handleSubmit: async function() {
       let queryURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.searchTerm}`;
