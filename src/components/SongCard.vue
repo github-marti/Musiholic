@@ -1,14 +1,26 @@
 <template>
-  <div class="song-card mx-auto my-3 d-flex flex-row flex-wrap">
-    <div class="artist-img flex-shrink-1">
-      <img :src="artistImg" />
+  <div>
+    <div class="song-card mx-auto my-3 d-flex flex-row flex-wrap">
+      <div class="artist-img flex-shrink-1">
+        <img :src="artistImg" />
+      </div>
+      <div class="song-info flex-fill p-3 mx-auto text-center">
+        <p class="quicksand song-title mb-0">{{ songTitle }}</p>
+        <p class="quicksand artist-name">by {{ artistName }}</p>
+        <audio ref="player" class="song-preview" controls>
+          <source :src="preview" />
+        </audio>
+        <p>
+        Check out this artist on
+        <a
+          target="_blank"
+          :href="`https://open.spotify.com/search/${artistName.toLowerCase().replace(/\s/g, '%20')}`"
+        >Spotify</a>
+      </p>
+      </div>
     </div>
-    <div class="song-info flex-fill p-3 mx-auto text-center">
-      <p class="quicksand song-title mb-0">{{ songTitle }}</p>
-      <p class="quicksand artist-name">by {{ artistName }}</p>
-      <audio ref="player" class="song-preview" controls>
-        <source :src="preview" />
-      </audio>
+    <div class="text-center">
+      <button class="nxt-song-btn px-2 prompt my-3" @click="nextSong">NEXT</button>
     </div>
   </div>
 </template>
@@ -106,6 +118,9 @@ export default {
       this.songTitle = randomSong.title;
       this.preview = randomSong.preview;
       console.log(this.songTitle, this.artistName, this.genre, this.preview);
+    },
+    nextSong: function() {
+        this.selectAlcohol();
     }
   }
 };
@@ -134,6 +149,10 @@ export default {
   width: 100%;
 }
 
+.nxt-song-btn {
+      font-size: 2em;
+  }
+
 @media screen and (max-width: 600px) {
   .song-card {
     -webkit-box-orient: vertical !important;
@@ -142,14 +161,14 @@ export default {
   }
 
   .artist-img {
-      margin: auto;
+    margin: auto;
   }
 
   .artist-img > img {
-      margin-top: 15px;
-      max-height: 200px;
-      border-radius: 50%;
-      border: 6px solid black;
+    margin-top: 15px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 6px solid black;
   }
 }
 </style>
