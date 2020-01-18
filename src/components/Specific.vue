@@ -16,23 +16,40 @@
           aria-describedby="basic-addon1"
         />
       </div>
-      <button type="button" class="mx-auto mt-3 btn btn-secondary search-btn">Search</button>
+      <button
+        type="button"
+        class="mx-auto mt-3 btn btn-secondary search-btn"
+        @click="handleSubmit"
+      >Search</button>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+import { globalState } from '../main'
+
 export default {
   name: "Specific",
   data() {
-      return {
-          searchTerm: ''
-      }
+    return {
+      searchTerm: ""
+    };
   },
   methods: {
-      handleInputChange: function() {
-          this.searchTerm = document.getElementById("drink-search").value.toLowerCase();
-      }
+    handleInputChange: function() {
+      this.searchTerm = document
+        .getElementById("drink-search")
+        .value.toLowerCase();
+      console.log(this.searchTerm);
+    },
+    handleSubmit: async function() {
+      let queryURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.searchTerm}`;
+      const results = await axios.get(queryURL);
+      globalState.results = results.data.drinks;
+      console.log(results.data);
+      this.$router.push("search");
+    }
   }
 };
 </script>
@@ -48,6 +65,6 @@ export default {
 }
 
 .drink-input {
-  margin-top: 40px; 
+  margin-top: 40px;
 }
 </style>
