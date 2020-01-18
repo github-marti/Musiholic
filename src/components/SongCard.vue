@@ -4,8 +4,9 @@
       <img :src="artistImg" />
     </div>
     <div class="song-info p-3 mx-auto">
-      <p class="prompt song-title mb-0">{{ songTitle.toUpperCase() }}</p>
+      <p class="quicksand song-title mb-0">{{ songTitle }}</p>
       <p class="quicksand artist-name">by {{ artistName }}</p>
+      <audio ref="player" controls><source :src="preview"></audio>
     </div>
   </div>
 </template>
@@ -27,7 +28,8 @@ export default {
       songTitle: "",
       artistName: "",
       artistImg: "",
-      artistId: 0
+      artistId: 0,
+      preview: ""
     };
   },
   created() {
@@ -37,6 +39,11 @@ export default {
         .includes(e.name.toLowerCase())
     );
     this.selectAlcohol();
+  },
+  mounted: function () {
+  	this.$watch('preview', function () {
+    	this.$refs.player.load()
+    })
   },
   methods: {
     selectAlcohol: function() {
@@ -96,7 +103,7 @@ export default {
       // set song name and preview based on the rnadomly chosen song
       this.songTitle = randomSong.title;
       this.preview = randomSong.preview;
-      console.log(this.songTitle, this.artistName, this.genre);
+      console.log(this.songTitle, this.artistName, this.genre, this.preview);
     }
   }
 };
@@ -104,18 +111,19 @@ export default {
 
 <style>
 .song-card {
-  width: 80%;
+  width: 100%;
   background: #4dd5be;
   color: black;
 }
 
 .artist-img>img {
-  height: 180px;
+    min-height: 200px;
+    max-width: 200px;
   margin: 0;
-  float: left;
+  object-fit: contain;
 }
 
 .song-title {
-    font-size: 4vw;
+    font-size: 3vw;
 }
 </style>
