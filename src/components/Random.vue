@@ -7,7 +7,7 @@
                  v-for="genre in genres"
                  :key="genre.id"
                  >
-                <div class="genre-block quicksand" :style="{ background: genre.background, color: genre.color }">{{genre.name}}</div>
+                <div class="genre-block prompt" :style="{ background: genre.background, color: genre.color }">{{genre.name}}</div>
             </div>
         </div>
     </div>
@@ -33,10 +33,9 @@ export default {
 }
 
 .genre-block {
+  font-size: 3em;
     text-align: center;
     padding: 30px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     margin: 5px 0;
 }
 </style>
