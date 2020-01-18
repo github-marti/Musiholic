@@ -30,6 +30,7 @@ export default function (Vue, { router, head, isClient }) {
 export const globalState = new Vue({
   data: {
     results: {},
-    selectedDrink: {}
+    selectedDrink: {},
+    ingredients: []
   }
 })

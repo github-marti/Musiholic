@@ -17,22 +17,9 @@ export default {
   data() {
     return {
       drink: globalState.selectedDrink,
-      ingredients: [],
+      ingredients: globalState.ingredients,
       instructions: globalState.selectedDrink.strInstructions
     };
-  },
-  created() {
-    console.log(this.drink);
-    let i = 1;
-    while (this.drink[`strIngredient${i}`]) {
-      this.ingredients.push({
-        id: i,
-        name: this.drink[`strIngredient${i}`],
-        measure: this.drink[`strMeasure${i}`]
-      });
-      i++;
-    }
-    return this.ingredients;
   },
   components: {
     IngredientsCard,

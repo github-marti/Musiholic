@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { globalState } from '../main'
 import About from '../components/About'
 import Ingredients from '../components/Ingredients'
 import Specific from '../components/Specific'
@@ -28,12 +29,17 @@ export default {
     return {
       display: 'main'
     }
+  },
+  created() {
+    globalState.results = {};
+    globalState.selectedDrink = {};
+    globalState.ingredients = [];
   }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 body {
   background: black;
@@ -41,11 +47,11 @@ body {
 }
 
 .quicksand {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .prompt {
-  font-family: 'Prompt', sans-serif;
+  font-family: "Prompt", sans-serif;
 }
 
 .font-black {
