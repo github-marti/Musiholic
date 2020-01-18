@@ -1,6 +1,6 @@
 <template>
   <div class="drink-card card mx-auto my-3 p-3 text-center">
-    <h3>{{ drink.strDrink }}</h3>
+    <h3 class="quicksand">{{ drink.strDrink }}</h3>
     <img class="drink-img my-3 mx-auto" :src="drink.strDrinkThumb" />
     <IngredientsCard :ingredients="ingredients" />
     <InstructionsCard :instructions="instructions" />

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul
-      class="ingredients-list list-group-flush mx-auto px-0"
+      class="ingredients-list quicksand list-group-flush mx-auto px-0"
       v-for="ingredient in ingredients"
       :key="ingredient.id"
     >

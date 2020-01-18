@@ -1,5 +1,5 @@
 <template>
-    <div class="instructions-card card mx-auto">
+    <div class="instructions-card card mx-auto quicksand">
         <h4>Instructions</h4>
         {{ instructions }}
     </div>
