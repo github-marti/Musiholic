@@ -1,7 +1,7 @@
 <template>
   <div class="ingredients mx-auto">
     <p class="title mb-1 p-1 mb-3 font-bold quicksand">Leave it to me:</p>
-    <div class="card position-relative p-3 font-black">
+    <div class="ingredients-card card position-relative p-3 font-black">
       <div class="card-title py-2 position-absolute text-center">
         <p class="mb-1 inline font-black">
           <strong>Pick your poison</strong>
@@ -70,32 +70,30 @@ export default {
       addons: {
         group1: ingredients.addons.group1,
         group2: ingredients.addons.group2
-      }
-    };
-  },
-  created() {
-      globalState.selected = {
+      },
+      selected: {
         drink: '',
         addons: []
-      };
+      }
+    };
   },
   methods: {
     select: function(event) {
       document.getElementById("dropdownMenuButton").textContent =
         event.target.textContent;
-      globalState.selected.drink = event.target.textContent.replace(/\s/g, "_");
+      this.selected.drink = event.target.textContent.replace(/\s/g, "_");
     },
     check: function(event) {
-      if (globalState.selected.addons.indexOf(event.target.value.replace(/\s/g, "_")) === -1) {
-        globalState.selected.addons.push(event.target.value.replace(/\s/g, "_"));
+      if (this.selected.addons.indexOf(event.target.value.replace(/\s/g, "_")) === -1) {
+        this.selected.addons.push(event.target.value.replace(/\s/g, "_"));
       } else {
-        globalState.selected.addons = globalState.selected.addons.filter(
+        this.selected.addons = this.selected.addons.filter(
           x => x !== event.target.value.replace(/\s/g, "_")
         );
       };
     },
     submit: async function() {
-      let ingredients = [globalState.selected.drink, ...globalState.selected.addons].join();
+      let ingredients = [this.selected.drink, ...this.selected.addons].join();
       let queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${ingredients}`;
       const results = await axios.get(queryURL);
       globalState.results = results.data.drinks;
@@ -110,6 +108,11 @@ export default {
 .ingredients {
   width: 90%;
   margin-bottom: 30px;
+}
+
+.ingredients-card {
+  background: #4dd5be;
+  color: black;
 }
 
 .dropdown button {

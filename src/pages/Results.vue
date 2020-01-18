@@ -1,11 +1,13 @@
 <template>
   <Layout>
     <DrinkCard />
+    <SongCard />
   </Layout>
 </template>
 
 <script>
 import DrinkCard from "../components/DrinkCard";
+import SongCard from "../components/SongCard";
 import { globalState } from "../main";
 
 export default {
@@ -13,7 +15,8 @@ export default {
     title: "musiholic"
   },
   components: {
-    DrinkCard
+    DrinkCard,
+    SongCard
   }
 };
 </script>

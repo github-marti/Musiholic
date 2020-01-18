@@ -22,6 +22,8 @@ export default {
 <style>
 .result-card {
   width: 70%;
+  background: #4dd5be;
+  color: black;
 }
 
 .result-img {

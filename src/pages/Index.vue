@@ -69,8 +69,6 @@ body {
 .card {
   border-style: none;
   border-radius: 0;
-  background: #4dd5be;
-  color: black;
 }
 
 .btn-secondary {

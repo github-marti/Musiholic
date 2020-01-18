@@ -1,7 +1,7 @@
 <template>
   <div class="search mx-auto">
     <p class="title mb-1 p-1 mb-3 font-bold quicksand">Looking for something in particular?</p>
-    <div class="card position-relative p-3 font-black">
+    <div class="card search-card position-relative p-3 font-black">
       <div class="card-title py-2 position-absolute text-center">
         <strong>Enter your drink here:</strong>
       </div>
@@ -57,6 +57,11 @@ export default {
 .search {
   width: 90%;
   margin-bottom: 30px;
+}
+
+.search-card {
+  background: #4dd5be;
+  color: black;
 }
 
 .inline {
