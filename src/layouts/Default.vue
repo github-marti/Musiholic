@@ -4,14 +4,14 @@
       <strong>
         <g-link class="main-title" to="/">
           <span>M</span>
-          <span><font-awesome-icon icon="music" flip="vertical" size=".5rem"/></span>
+          <span><font-awesome-icon icon="headphones" flip="vertical" size=".5rem"/></span>
           <span>S</span>
-          <span>I</span>
+          <span><font-awesome-icon icon="wine-glass"/></span>
           <span>H</span>
           <span><font-awesome-icon icon="compact-disc"/></span>
           <span>L</span>
-          <span><font-awesome-icon icon="wine-glass"/></span>
-          <span>C</span>
+          <span>I</span>
+          <span><font-awesome-icon icon="glass-cheers" rotation="270"/></span>
 
         </g-link>
       </strong>
@@ -48,7 +48,10 @@ header {
   text-decoration: none;
   font-size: 5.5em;
   color: black;
-  bottom: -22%;
+}
+
+.main-title>span {
+  padding: 5px
 }
 
 header a:hover {

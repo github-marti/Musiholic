@@ -7,7 +7,7 @@ import VueRouter from 'vue-router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCompactDisc, faMusic, faWineGlass } from '@fortawesome/free-solid-svg-icons'
+import { faCompactDisc, faMusic, faWineGlass, faHeadphones, faGlassCheers } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 Vue.use(VueRouter)
@@ -15,7 +15,9 @@ Vue.use(VueRouter)
 library.add(
   faCompactDisc,
   faMusic,
-  faWineGlass
+  faWineGlass,
+  faHeadphones,
+  faGlassCheers
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
