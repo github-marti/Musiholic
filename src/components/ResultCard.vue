@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="result-card card mx-auto my-3 p-3 text-center">
-      <h3>{{ this.drinkName }}</h3>
+      <h3>{{ drinkName }}</h3>
       <img
         class="result-img mx-auto"
-        :src="this.drinkImg"
-        :data-value="this.drinkName.toLowerCase().replace(/\s/g, '_')"
-        @click="this.selectDrink"
+        :src="drinkImg"
+        :data-value="drinkName.toLowerCase().replace(/\s/g, '_')"
+        @click="selectDrink"
       />
     </div>
   </div>
