@@ -58,4 +58,10 @@ header a:hover {
   color: white;
   text-decoration: none;
 }
+
+@media screen and (max-width: 700px) {
+  .main-title {
+    font-size: 8vw;
+  }
+}
 </style>
