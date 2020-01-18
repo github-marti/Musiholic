@@ -32,13 +32,15 @@ export default {
             name: "Dance",
             id: 5,
             background: "#4dd599",
-            color: "#474747"
+            color: "#474747",
+            genreId: 113
         },
         {
-            name: "Indie",
+            name: "Alternative",
             id: 6,
             background: "#a8ffa3",
-            color: "#474747"
+            color: "#474747",
+            genreId: 85
         },
         {
             name: "Reggae",
@@ -51,9 +53,9 @@ export default {
             genreId: 165
         },
         {
-            name: "Alternative",
+            name: "Reggaeton",
             id: 9,
-            genreId: 85
+            genreId: 122
         },
         {
             name: "Electro",
