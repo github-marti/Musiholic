@@ -15,6 +15,9 @@ export default {
 <style>
     .instructions-card {
         border-style: none;
+        background: black;
+        margin: 10px 0;
+        color: #4dd5be;
         width: 80%
     }
 </style>

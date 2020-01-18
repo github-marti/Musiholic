@@ -7,7 +7,7 @@
     >
       <li class="list-group-item d-flex justify-content-between align-items-center">
         {{ ingredient.name }}
-        <span class="badge badge-primary badge-pill">{{ ingredient.measure }}</span>
+        <span class="badge badge-pill">{{ ingredient.measure }}</span>
       </li>
     </ul>
   </div>
@@ -22,6 +22,17 @@ export default {
 
 <style>
 .ingredients-list {
-  width: 50%;
+  width: 70%;
+}
+
+.list-group-item {
+  background: black;
+  color: #4dd5be;
+  border-bottom: 1px solid #4dd5be;
+}
+
+.badge {
+  background: #4dd5be;
+  color: black;
 }
 </style>

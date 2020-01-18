@@ -44,9 +44,16 @@ export default {
 <style>
 .drink-card {
   width: 70%;
+  background: black;
+}
+
+.drink-card>h3 {
+  color: #4dd5be;
 }
 
 .drink-img {
   width: 40%;
+  border-radius: 50%;
+  border: 6px solid #4dd5be;
 }
 </style>
