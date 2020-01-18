@@ -29,7 +29,7 @@ query {
 </static-query>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Prompt:700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prompt:600,900&display=swap');
 
 body {
   font-family: 'Helvetica', sans-serif;
