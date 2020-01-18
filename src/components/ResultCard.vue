@@ -12,10 +12,16 @@
       <div
         class="result-card card mx-auto my-3 p-3 text-center"
         v-for="result in results"
+        :data-value="results[index-1].strDrink.toLowerCase().replace(/\s/g, '_')"
         :key="result.idDrink"
+        @click="selectDrink"
       >
         <h3>{{ result.strDrink }}</h3>
-        <img class="result-img mx-auto" :src="result.strDrinkThumb" />
+        <img
+          class="result-img mx-auto"
+          :src="results[index-1].strDrinkThumb"
+          :data-value="results[index-1].strDrink.toLowerCase().replace(/\s/g, '_')"
+        />
       </div>
     </template>
     <template v-else>
@@ -23,9 +29,14 @@
         class="result-card card mx-auto my-3 p-3 text-center"
         v-for="index in numOfResults"
         :key="results[index-1].idDrink"
+        @click="selectDrink"
       >
         <h3>{{ results[index-1].strDrink }}</h3>
-        <img class="result-img mx-auto" :src="results[index-1].strDrinkThumb" />
+        <img
+          class="result-img mx-auto"
+          :src="results[index-1].strDrinkThumb"
+          :data-value="results[index-1].strDrink.toLowerCase().replace(/\s/g, '_')"
+        />
       </div>
       <div class="text-center">
         <button
@@ -40,6 +51,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import { globalState } from "../main.js";
 
 export default {
@@ -58,9 +70,16 @@ export default {
       if (this.numOfResults + 5 < this.results.length) {
         this.numOfResults += 5;
       } else {
-        this.numOfResults += (this.results.length - this.numOfResults);
-        document.getElementById('showmore-button').disabled = true;
+        this.numOfResults += this.results.length - this.numOfResults;
+        document.getElementById("showmore-button").disabled = true;
       }
+    },
+    selectDrink: async function(event) {
+      let queryURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${event.target.getAttribute('data-value')}`;
+      const result = await axios.get(queryURL);
+      globalState.result = result.data.drinks;
+      console.log(result);
+      this.$router.push("results");
     }
   }
 };
@@ -73,5 +92,6 @@ export default {
 
 .result-img {
   width: 33%;
+  border-radius: 50%;
 }
 </style>
