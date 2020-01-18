@@ -22,6 +22,7 @@ export default {
     let i = 1;
     while (this.drink[`strIngredient${i}`]) {
       this.ingredients.push({
+        id: i,
         name: this.drink[`strIngredient${i}`],
         measure: this.drink[`strMeasure${i}`]
       });

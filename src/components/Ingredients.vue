@@ -99,7 +99,6 @@ export default {
       let queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${ingredients}`;
       const results = await axios.get(queryURL);
       globalState.results = results.data.drinks;
-      console.log(results.data);
       this.$router.push('search');
     }
   }

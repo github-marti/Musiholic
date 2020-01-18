@@ -6,7 +6,7 @@
         <h4>Try again?</h4>
       </g-link>
     </div>
-    <template>
+    <template v-else>
       <ResultCard
         v-for="index in numOfResults"
         :drink-name="results[index-1].strDrink"
@@ -43,9 +43,6 @@ export default {
       results: globalState.results,
       numOfResults: globalState.results.length < 5 ? globalState.results.length : 5
     };
-  },
-  created() {
-    console.log(globalState.results);
   },
   methods: {
     showMore: function() {
