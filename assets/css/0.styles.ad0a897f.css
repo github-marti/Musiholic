@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Prompt:600,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Quicksand&display=swap);body{font-family:Helvetica,sans-serif;padding:0}header{font-family:Prompt,sans-serif;text-align:center;background:#4dd5be}.main-title{text-decoration:none;font-size:5.5em;color:#000}.main-title>span{padding:5px}header a:hover{color:#fff;text-decoration:none}@media screen and (max-width:700px){.main-title{font-size:8vw}}
+@import url(https://fonts.googleapis.com/css?family=Prompt:600,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Quicksand&display=swap);body{font-family:Helvetica,sans-serif;padding:0}header{font-family:Prompt,sans-serif;text-align:center;background:#4dd5be}.main-title{text-decoration:none;font-size:5.5em;color:#000}.main-title>span{padding:5px}header a:hover{color:#fff;text-decoration:none}@media screen and (max-width:700px){.main-title{font-size:13vw}.main-title>span{padding:3px}}
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
