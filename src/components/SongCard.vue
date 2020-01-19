@@ -125,7 +125,11 @@ export default {
       console.log(this.songTitle, this.artistName, this.genre, this.preview);
     },
     nextSong: function() {
-      this.selectAlcohol();
+      if (globalState.selectedGenre) {
+        this.selectArtist();
+      } else {
+        this.selectAlcohol();
+      }
     }
   }
 };
