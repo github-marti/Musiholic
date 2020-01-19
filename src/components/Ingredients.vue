@@ -7,7 +7,10 @@
           <strong>Pick your poison</strong>
         </p>
         <div class="dropdown ml-3 inline">
-          <b-form-select class="m-md-2" v-model="selected.drink">
+          <b-form-select class="m-md-2 font-black" v-model="selected.drink">
+            <template v-slot:first>
+              <b-form-select-option :value="null" disabled>-- Alcohol --</b-form-select-option>
+            </template>
             <b-form-select-option
               class="dropdown-item"
               v-for="drink in drinks"
