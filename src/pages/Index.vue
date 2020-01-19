@@ -77,6 +77,10 @@ body {
   border-radius: 0;
 }
 
+.card-title {
+  font-size: 1.8em;
+}
+
 .btn-secondary {
   background: black;
 }

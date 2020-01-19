@@ -102,12 +102,12 @@ export default {
 .ingredients-card {
   background: #4dd5be;
   color: black;
+  font-size: 1em;
 }
 
 .dropdown button {
   background: white;
   border: 1px solid #ccc;
-  font-size: 0.8em;
 }
 
 .dropdown-item {
@@ -116,6 +116,7 @@ export default {
 
 .checkbox-container {
   margin-top: 60px;
+  font-size: 1.2em;
   display: flex;
   justify-content: space-evenly;
 }
