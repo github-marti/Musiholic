@@ -60,20 +60,8 @@ export default {
       )}`;
       const result = await axios.get(queryURL);
       globalState.selectedDrink = result.data.drinks[0];
-      this.getIngredients(globalState.selectedDrink);
+      globalState.getIngredients(globalState.selectedDrink);
       this.$router.push("results");
-    },
-    getIngredients: function(drink) {
-      console.log('hello', drink.strIngredient1);
-      let i = 1;
-      while (drink[`strIngredient${i}`]) {
-        globalState.ingredients.push({
-          id: i,
-          name: drink[`strIngredient${i}`],
-          measure: drink[`strMeasure${i}`]
-        });
-        i++;
-      }
     }
   }
 };

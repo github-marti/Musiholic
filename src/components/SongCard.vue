@@ -11,12 +11,12 @@
           <source :src="preview" />
         </audio>
         <p class="quicksand">
-        Find this song on
-        <a
-          target="_blank"
-          :href="`https://open.spotify.com/search/${songTitle.toLowerCase().replace(/\s/g, '%20')}`"
-        >Spotify</a>
-      </p>
+          Find this song on
+          <a
+            target="_blank"
+            :href="`https://open.spotify.com/search/${songTitle.toLowerCase().replace(/\s/g, '%20')}`"
+          >Spotify</a>
+        </p>
       </div>
     </div>
     <div class="text-center">
@@ -47,12 +47,17 @@ export default {
     };
   },
   created() {
-    this.alcohols = alcohol.drinks.filter(e =>
-      globalState.ingredients
-        .map(d => d.name.toLowerCase())
-        .includes(e.name.toLowerCase())
-    );
-    this.selectAlcohol();
+    if (globalState.selectedGenre) {
+      this.genreId = globalState.selectedGenre;
+      this.selectArtist();
+    } else {
+      this.alcohols = alcohol.drinks.filter(e =>
+        globalState.ingredients
+          .map(d => d.name.toLowerCase())
+          .includes(e.name.toLowerCase())
+      );
+      this.selectAlcohol();
+    }
   },
   mounted: function() {
     this.$watch("preview", function() {
@@ -120,7 +125,7 @@ export default {
       console.log(this.songTitle, this.artistName, this.genre, this.preview);
     },
     nextSong: function() {
-        this.selectAlcohol();
+      this.selectAlcohol();
     }
   }
 };
@@ -150,8 +155,8 @@ export default {
 }
 
 .nxt-song-btn {
-      font-size: 2em;
-  }
+  font-size: 2em;
+}
 
 @media screen and (max-width: 600px) {
   .song-card {

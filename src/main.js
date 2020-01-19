@@ -33,5 +33,20 @@ export const globalState = new Vue({
     selectedDrink: {},
     ingredients: [],
     selectedGenre: 0
+  },
+  methods: {
+    getIngredients: function(drink) {
+      let i = 1;
+      while (drink[`strIngredient${i}`]) {
+        console.log(drink[`strIngredient${i}`]);
+        this.ingredients.push({
+          id: i,
+          name: drink[`strIngredient${i}`],
+          measure: drink[`strMeasure${i}`]
+        });
+        i++;
+      }
+      console.log(this.ingredients);
+    }
   }
 })

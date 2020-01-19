@@ -46,10 +46,13 @@ export default {
       globalState.selectedGenre = event.target.getAttribute('value');
       const alcohols = ingredients.drinks.filter(e => e.genreId.includes(parseInt(globalState.selectedGenre)));
       const randomAlcohol = alcohols[Math.floor(Math.random() * alcohols.length)].name.toLowerCase().replace(/\s/g, '_');
-      const queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${randomAlcohol}`;
+      let queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${randomAlcohol}`;
       const results = await axios.get(queryURL);
       const randomDrink = results.data.drinks[Math.floor(Math.random() * results.data.drinks.length)];
-      globalState.selectedDrink = randomDrink;
+      queryURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${randomDrink.strDrink.toLowerCase().replace(/\s/g, '_')}`;
+      const drinkDetails = await axios.get(queryURL);
+      globalState.selectedDrink = drinkDetails.data.drinks[0];
+      globalState.getIngredients(drinkDetails.data.drinks[0]);
       this.$router.push('results');
     }
   }
