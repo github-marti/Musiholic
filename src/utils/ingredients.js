@@ -5,12 +5,12 @@ export default {
     { name: "Tequila", id: 3, genreId: [65, 113, 132, 67] },
     { name: "Dark Rum", id: 4, genreId: [122, 144, 67] },
     { name: "Light Rum", id: 5, genreId: [122, 144, 67] },
-    { name: "Rye Whiskey", id: 6, genreId: [464, 152, 153, 84, 169] },
-    { name: "Bourbon", id: 7, genreId: [464, 152, 153, 84, 169] },
+    { name: "Rye Whiskey", id: 6, genreId: [464, 152, 153, 84, 169, 466] },
+    { name: "Bourbon", id: 7, genreId: [464, 152, 153, 84, 169, 466] },
     { name: "Red Wine", id: 8, genreId: [165, 129, 98] },
     { name: "White Wine", id: 9, genreId: [165, 129, 98] },
     { name: "Champagne", id: 10, genreId: [132, 113] },
-    { name: "Lager", id: 11, genreId: [152, 84, 464] },
+    { name: "Lager", id: 11, genreId: [152, 84, 464, 466] },
     { name: "Beer", id: 12, genreId: [152, 84, 464] }
   ],
   addons: {

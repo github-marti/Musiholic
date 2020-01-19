@@ -31,6 +31,7 @@ export const globalState = new Vue({
   data: {
     results: {},
     selectedDrink: {},
-    ingredients: []
+    ingredients: [],
+    selectedGenre: 0
   }
 })

@@ -8,8 +8,10 @@
             class="genre-block prompt"
             :genre="genres[index-1].name"
             :style="{ background: genres[index-1].background, color: genres[index-1].color }"
+            :value="genres[index-1].genreId"
             @mouseover="onHover"
             @mouseout="offHover"
+            @click="genreSelect"
           >{{genres[index-1].name}}</div>
         </div>
       </div>
@@ -19,6 +21,9 @@
 
 <script>
 import music from "../utils/music";
+import ingredients from "../utils/ingredients";
+import { globalState } from "../main";
+import axios from 'axios';
 export default {
   name: "Random",
   data() {
@@ -36,6 +41,16 @@ export default {
       const genre = event.target.getAttribute('genre');
       const currentGenre = this.genres.find(e => e.name === genre);
       event.target.setAttribute("style", `background: ${currentGenre.background}; color: ${currentGenre.color}`)
+    },
+    genreSelect: async function(event) {
+      globalState.selectedGenre = event.target.getAttribute('value');
+      const alcohols = ingredients.drinks.filter(e => e.genreId.includes(parseInt(globalState.selectedGenre)));
+      const randomAlcohol = alcohols[Math.floor(Math.random() * alcohols.length)].name.toLowerCase().replace(/\s/g, '_');
+      const queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${randomAlcohol}`;
+      const results = await axios.get(queryURL);
+      const randomDrink = results.data.drinks[Math.floor(Math.random() * results.data.drinks.length)];
+      globalState.selectedDrink = randomDrink;
+      this.$router.push('results');
     }
   }
 };
