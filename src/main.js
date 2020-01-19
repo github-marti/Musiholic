@@ -4,11 +4,14 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCompactDisc, faMusic, faWineGlass, faHeadphones, faGlassCheers } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import BootstrapVue from 'bootstrap-vue'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
+
+Vue.use(BootstrapVue)
 
 Vue.use(VueRouter)
 
@@ -34,7 +37,7 @@ export const globalState = new Vue({
     selectedGenre: 0
   },
   methods: {
-    getIngredients: function(drink) {
+    getIngredients: function (drink) {
       let i = 1;
       while (drink[`strIngredient${i}`]) {
         console.log(drink[`strIngredient${i}`]);

@@ -1,6 +1,7 @@
 <template>
   <Layout>
-    <div v-if="results === 'None Found'" class="result-card card mx-auto my-3 p-3 text-center">
+    <div v-if="!results">Something went wrong!</div>
+    <div v-else-if="results === 'None Found'" class="result-card card mx-auto my-3 p-3 text-center">
       <h3>We couldn't find any drinks.</h3>
       <g-link to="/">
         <h4>Try again?</h4>
@@ -42,7 +43,7 @@ export default {
     return {
       results: globalState.results,
       numOfResults:
-        globalState.results.length < 5 ? globalState.results.length : 5
+        globalState.results && globalState.results.length < 5 ? globalState.results.length : 5
     };
   },
   mounted() {

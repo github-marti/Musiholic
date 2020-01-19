@@ -7,25 +7,14 @@
           <strong>Pick your poison</strong>
         </p>
         <div class="dropdown ml-3 inline">
-          <button
-            class="btn dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Base Alcohol</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a
+          <b-form-select class="m-md-2" v-model="selected.drink">
+            <b-form-select-option
               class="dropdown-item"
-              href="#"
               v-for="drink in drinks"
+              :value="drink.name.toLowerCase().replace(/\s/g, '_')"
               :key="drink.id"
-              v-on:click="select"
-            >
-              <span>{{drink.name}}</span>
-            </a>
-          </div>
+            >{{drink.name}}</b-form-select-option>
+          </b-form-select>
         </div>
       </div>
       <div class="checkbox-container">
@@ -59,8 +48,8 @@
 
 <script>
 import ingredients from "../utils/ingredients";
-import axios from 'axios';
-import { globalState } from '../main.js';
+import axios from "axios";
+import { globalState } from "../main.js";
 
 export default {
   name: "Ingredients",
@@ -72,39 +61,36 @@ export default {
         group2: ingredients.addons.group2
       },
       selected: {
-        drink: '',
+        drink: "",
         addons: []
       }
     };
   },
   methods: {
-    select: function(event) {
-      document.getElementById("dropdownMenuButton").textContent =
-        event.target.textContent;
-      this.selected.drink = event.target.textContent.replace(/\s/g, "_");
-    },
     check: function(event) {
-      if (this.selected.addons.indexOf(event.target.value.replace(/\s/g, "_")) === -1) {
+      if (
+        this.selected.addons.indexOf(event.target.value.replace(/\s/g, "_")) ===
+        -1
+      ) {
         this.selected.addons.push(event.target.value.replace(/\s/g, "_"));
       } else {
         this.selected.addons = this.selected.addons.filter(
           x => x !== event.target.value.replace(/\s/g, "_")
         );
-      };
+      }
     },
     submit: async function() {
       let ingredients = [this.selected.drink, ...this.selected.addons].join();
       let queryURL = `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${ingredients}`;
       const results = await axios.get(queryURL);
       globalState.results = results.data.drinks;
-      this.$router.push('search');
+      this.$router.push("search");
     }
   }
 };
 </script>
 
 <style>
-
 .ingredients {
   width: 90%;
   margin-bottom: 30px;
@@ -131,13 +117,13 @@ export default {
   justify-content: space-evenly;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   border: 1px solid #ccc;
   background: white;
 }
 
 label {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .search-btn {

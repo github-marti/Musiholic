@@ -51,11 +51,11 @@ export default {
       this.genreId = globalState.selectedGenre;
       this.selectArtist();
     } else {
-      this.alcohols = alcohol.drinks.filter(e =>
+      this.alcohols = alcohol.drinks ? alcohol.drinks.filter(e =>
         globalState.ingredients
           .map(d => d.name.toLowerCase())
           .includes(e.name.toLowerCase())
-      );
+      ) : [];
       this.selectAlcohol();
     }
   },
@@ -75,11 +75,11 @@ export default {
     },
     selectGenre: function() {
       // choose a random genre based on the alcohol choice
-      const randomGenre = this.alcohol.genreId[
+      const randomGenre = this.alcohol ? this.alcohol.genreId[
         Math.floor(Math.random() * this.alcohol.genreId.length)
-      ];
+      ] : undefined;
       // set the genre as the name, rather than the id, by going through the music util
-      this.genre = music.genres.find(e => e.genreId === randomGenre).name;
+      this.genre = music.genres && music.genres.name ? music.genres.find(e => e.genreId === randomGenre).name : 0;
       this.genreId = randomGenre;
       this.selectArtist();
     },

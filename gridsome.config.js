@@ -6,5 +6,8 @@
 
 module.exports = {
   siteName: 'Musiholic',
-  plugins: []
+  plugins: [
+  ],
+  siteUrl: 'https://github-marti.github.io',
+  pathPrefix: '/Musiholic'
 }
