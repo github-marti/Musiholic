@@ -45,6 +45,11 @@ export default {
         globalState.results.length < 5 ? globalState.results.length : 5
     };
   },
+  mounted() {
+    if (!globalState.results) {
+      this.$router.push('/');
+    }
+  },
   methods: {
     showMore: function() {
       if (this.numOfResults + 5 < this.results.length) {

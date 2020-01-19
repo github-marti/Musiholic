@@ -14,6 +14,11 @@ export default {
   metaInfo: {
     title: "musiholic"
   },
+  mounted() {
+    if (!globalState.results) {
+      this.$router.push("/");
+    }
+  },
   components: {
     DrinkCard,
     SongCard
