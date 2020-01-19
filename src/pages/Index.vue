@@ -84,7 +84,8 @@ body {
 .btn-secondary {
   background: black;
   border-style: none;
-  font-size: 1.5em;
+  font-size: 1em;
+  width: 50%;
 }
 
 .card-title {

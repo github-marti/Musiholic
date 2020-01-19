@@ -71,4 +71,8 @@ export default {
 .drink-input {
   margin-top: 40px;
 }
+
+#drink-search {
+  font-size: 1.3em;
+}
 </style>

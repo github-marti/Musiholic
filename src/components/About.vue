@@ -14,7 +14,7 @@ export default {
 
 <style>
   .about {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 </style>
 

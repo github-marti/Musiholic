@@ -61,7 +61,11 @@ header a:hover {
 
 @media screen and (max-width: 700px) {
   .main-title {
-    font-size: 8vw;
+    font-size: 13vw;
+  }
+
+  .main-title>span {
+    padding: 3px
   }
 }
 </style>

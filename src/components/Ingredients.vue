@@ -121,6 +121,10 @@ export default {
   justify-content: space-evenly;
 }
 
+.custom-select {
+  font-size: .6em;
+}
+
 input[type="checkbox"] {
   border: 1px solid #ccc;
   background: white;
