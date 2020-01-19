@@ -22,7 +22,8 @@ export default {
 
 <style>
 .ingredients-list {
-  width: 70%;
+  width: 90%;
+  font-size: 1.3em;
 }
 
 .list-group-item {

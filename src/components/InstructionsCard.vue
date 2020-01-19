@@ -17,7 +17,8 @@ export default {
         border-style: none;
         background: black;
         margin: 10px 0;
+        font-size: 1.3em;
         color: #4dd5be;
-        width: 80%
+        width: 90%
     }
 </style>

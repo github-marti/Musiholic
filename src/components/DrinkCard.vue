@@ -30,7 +30,7 @@ export default {
     
 <style>
 .drink-card {
-  width: 70%;
+  width: 90%;
   background: black;
 }
 
