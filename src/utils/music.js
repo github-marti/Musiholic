@@ -17,7 +17,7 @@ export default {
         {
             name: "Country",
             id: 3,
-            background: "#4b8e8d",
+            background: "#6774ce",
             color: "white",
             genreId: 84
         },
