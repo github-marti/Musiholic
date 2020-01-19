@@ -12,3 +12,9 @@ export default {
 }
 </script>
 
+<style>
+  .about {
+    font-size: 1.3em;
+  }
+</style>
+
