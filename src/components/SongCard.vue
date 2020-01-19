@@ -10,11 +10,11 @@
         <audio ref="player" class="song-preview" controls>
           <source :src="preview" />
         </audio>
-        <p>
-        Check out this artist on
+        <p class="quicksand">
+        Find this song on
         <a
           target="_blank"
-          :href="`https://open.spotify.com/search/${artistName.toLowerCase().replace(/\s/g, '%20')}`"
+          :href="`https://open.spotify.com/search/${songTitle.toLowerCase().replace(/\s/g, '%20')}`"
         >Spotify</a>
       </p>
       </div>
