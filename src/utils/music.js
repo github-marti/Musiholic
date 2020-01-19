@@ -36,11 +36,11 @@ export default {
             genreId: 113
         },
         {
-            name: "Alternative",
+            name: "Folk",
             id: 6,
+            genreId: 466,
             background: "#a8ffa3",
-            color: "#474747",
-            genreId: 85
+            color: "#474747"
         },
         {
             name: "Reggae",
@@ -63,9 +63,9 @@ export default {
             genreId: 106
         },
         {
-            name: "Folk",
+            name: "Alternative",
             id: 11,
-            genreId: 466
+            genreId: 85
         },
         {
             name: "Jazz",
